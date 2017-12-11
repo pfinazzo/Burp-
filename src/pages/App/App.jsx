@@ -61,7 +61,6 @@ render() {
               <Route path="/checkout" render={() => <Checkout />}/>
               <Route path="/confirmation" render={() => <Confirmation />}/>
               <Route path="/beers/:beer_id" render={(props) => <BeerShow {...props} beers={this.state.beers} checked={this.state.checked} /> } />
-
             </Switch>
       </div>
     );

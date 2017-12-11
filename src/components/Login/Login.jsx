@@ -3,8 +3,8 @@ import React from 'react';
 const Login = (props) => {
   return (
     <div>
-<input type="checkbox" checked={props.checked} onChange={props.loggedIn} />
-</div>
+      <input type="checkbox" checked={props.checked} onChange={props.loggedIn} />
+    </div>
   )
 }
 

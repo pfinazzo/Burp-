@@ -10,11 +10,11 @@ const BeerIndex = (props) => {
         <th>Name</th>
         <th>Image</th>
       </tr>
-        {props.beers.map((beer, idx) => 
+        {props.beers.map((beer, idx) =>
         <tr key={idx}>
           <td>{beer.name}</td>
           <td><img src={beer.image_url}/></td>
-          <td><Link to={'beers/' + beer.id}>View Beer</Link></td>
+          <td><Link to={`beers/${beer._id}`}></Link></td>
         </tr>
       )}
     </tbody>

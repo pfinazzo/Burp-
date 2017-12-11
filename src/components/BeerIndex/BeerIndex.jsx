@@ -8,10 +8,10 @@ const BeerIndex = (props) => {
       <tr>
         <th>Name</th>
         <th>Price</th> 
-        <th>ABV</th>
-        <th>IBU</th>
+        <th>ABV (alcohol-level)</th>
+        <th>IBU (bitterness)</th>
         <th>Food Pairing</th>
-        <th>image_url</th>
+        <th>Image</th>
         <th>Description</th>
       </tr>
         {props.beers.map((beer, idx) => 
@@ -21,7 +21,7 @@ const BeerIndex = (props) => {
           <td>{beer.abv}</td>
           <td>{beer.ibu}</td>
           <td>{beer.food_pairing}</td>
-          <td>{beer.image_url}</td>
+          <td><img src={beer.image_url}/></td>
           <td>{beer.description}</td>
           <td><button onClick={()=>props.addItem(beer)}>+</button></td>
         </tr>

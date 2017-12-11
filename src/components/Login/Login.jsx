@@ -3,7 +3,7 @@ import React from 'react';
 const Login = (props) => {
   return (
     <div>
-Login
+<input type="checkbox" checked={props.checked} onChange={props.loggedIn} />
 </div>
   )
 }

@@ -34,6 +34,12 @@ addItem(props) {
   })
 }
 
+loggedIn = () => {
+  this.setState({
+      checked: !this.state.checked
+  })
+}
+
 
 // lifecyle methods
 
@@ -50,7 +56,7 @@ render() {
       <div>
           <NavBar checked={this.state.checked}/>
             <Switch>
-              <Route exact path="/" render ={(props) => this.state.checked ? <BeerIndex beers={this.state.beers}/> : <Login />} />
+              <Route exact path="/" render ={(props) => this.state.checked ? <BeerIndex beers={this.state.beers}/> : <Login beers={this.state.beers} loggedIn={this.loggedIn} checked={this.state.checked}/>} />
               <Route exact path="/beers" render ={() => <BeerIndex beers={this.state.beers} addItem={this.addItem}/>}/>
               <Route path="/checkout" render={() => <Checkout />}/>
               <Route path="/confirmation" render={() => <Confirmation />}/>

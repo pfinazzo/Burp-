@@ -60,7 +60,7 @@ render() {
               <Route exact path="/beers" render ={() => <BeerIndex beers={this.state.beers} addItem={this.addItem}/>}/>
               <Route path="/checkout" render={() => <Checkout />}/>
               <Route path="/confirmation" render={() => <Confirmation />}/>
-              <Route path="/beers/:beer_id" render={(props) => <BeerShow {...props} beers={this.state.beers} checked={this.state.checked} /> } />
+              <Route path="/beers/:beer_id" render={ (match) => <BeerShow beers={this.state.beers} { ...match} /> } />
             </Switch>
       </div>
     );

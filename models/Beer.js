@@ -9,7 +9,6 @@ const beerSchema = Schema({
   ibu: Number,
   food_pairing: String,
   image_url: String,
-  price: Number,
   id: Number
 })
 

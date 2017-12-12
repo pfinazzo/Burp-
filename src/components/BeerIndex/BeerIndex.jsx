@@ -14,7 +14,7 @@ const BeerIndex = (props) => {
         <tr key={idx}>
           <td>{beer.name}</td>
           <td><img src={beer.image_url}/></td>
-          <td><Link to={`beers/${beer._id}`}></Link></td>
+          <td><Link to={`beers/${beer._id}`}>View Beer</Link></td>
         </tr>
       )}
     </tbody>

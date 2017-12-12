@@ -5,9 +5,10 @@ import './NavBar.css'
 const NavBar = (props) => {
   return (
     <header> 
-      <h1>
-        <Link className="home-link"to="/beers">Burp</Link> 
-        <Link to="/checkout">Cart</Link>
+      <h1 className="nav">
+        <Link className="home-link" to="/beers">Burp</Link> 
+        <Link className="cart-link" to="/checkout">Cart</Link>
+        <Link to="/login">Login</Link>
       </h1>
     </header>
   )

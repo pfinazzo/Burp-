@@ -7,6 +7,7 @@ const NavBar = (props) => {
     <header> 
       <h1 className="nav">
       <Link to="/login">Login</Link>
+      <Link to="/signup">Sign Up</Link>
         <Link className="home-link" to="/beers">Burp</Link> 
         <Link className="cart-link" to="/checkout">Cart</Link>
       </h1>

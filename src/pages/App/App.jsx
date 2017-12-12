@@ -12,7 +12,8 @@ import Checkout from '../../components/Checkout/Checkout';
 import Confirmation from '../../components/Confirmation/Confirmation';
 import NavBar from '../../components/NavBar/NavBar';
 import BeerShow from '../../components/BeerShow/BeerShow'
-import Login from '../../components/Login/Login'
+import LoginPage from '../LoginPage/LoginPage';
+import SignupPage from '../SignupPage/SignupPage';
 
 class App extends Component {
   constructor() {
@@ -56,8 +57,9 @@ render() {
       <div>
           <NavBar checked={this.state.checked}/>
             <Switch>
-              <Route exact path="/" render ={(props) => this.state.checked ? <BeerIndex beers={this.state.beers}/> : <Login beers={this.state.beers} loggedIn={this.loggedIn} checked={this.state.checked}/>} />
-              <Route path="/login" render={() => <Login />} />
+              <Route exact path="/" render ={(props) => this.state.checked ? <BeerIndex beers={this.state.beers}/> : <LoginPage beers={this.state.beers} loggedIn={this.loggedIn} checked={this.state.checked}/>} />
+              <Route path="/login" render={() => <LoginPage />} />
+              <Route path="/signup" render={() => <SignupPage />} />
               <Route exact path="/beers" render ={() => <BeerIndex beers={this.state.beers} addItem={this.addItem}/>}/>
               <Route path="/checkout" render={() => <Checkout />}/>
               <Route path="/confirmation" render={() => <Confirmation />}/>

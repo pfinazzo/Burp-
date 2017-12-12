@@ -6,12 +6,13 @@ const beers = require('./routes/beers')
 const app = express();
 
 require('./config/database');
+require('dotenv');
 
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({encoded: true}));
-app.use('/beers', beers)
+app.use('/beers', beers);
 
 
 app.get('/*', (req, res) => {

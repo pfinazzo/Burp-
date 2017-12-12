@@ -18,11 +18,9 @@ const BeerIndex = (props) => {
           <td>{beer.name}</td>
           <td><img src={beer.image_url}/></td>
           <td>{beer.price}</td>
-          <td><Link to={`beers/${beer._id}`}>View Beer</Link></td>
+          <td><Link className="btn btn-success"to={`beers/${beer._id}`}>View Beer</Link></td>
           <td>
-            <form action="/checkout" method="get">
-              <button className="btn btn-success" type="submit">Add to cart</button>
-            </form>
+            <Link to="/checkout" className="btn btn-success">Add to Cart</Link>
           </td>
         </tr>
       )}

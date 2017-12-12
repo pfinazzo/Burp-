@@ -5,4 +5,12 @@
   margin: 20px;
 }
 
+.big {
+  min-width: 200px;
+}
 
+
+.center {
+  text-align: center;
+  margin: 20px;
+}

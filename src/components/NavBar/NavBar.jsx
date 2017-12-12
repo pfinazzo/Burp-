@@ -4,14 +4,17 @@ import './NavBar.css'
 
 const NavBar = (props) => {
   return (
-    <header> 
+    <div>
+      <h1 className="center">Burp</h1>
+    <header>
       <h1 className="nav">
-      <Link to="/login">Login</Link>
-      <Link to="/signup">Sign Up</Link>
-        <Link className="home-link" to="/beers">Burp</Link> 
-        <Link className="cart-link" to="/checkout">Cart</Link>
+      <Link className="btn btn-primary big" to="/login">Login</Link>
+      <Link className="btn btn-primary big" to="/signup">Sign Up</Link>
+        <Link className="btn btn-primary big" to="/beers">Beers</Link> 
+        <Link className="btn btn-primary big" to="/checkout">Cart</Link>
       </h1>
     </header>
+    </div>
   )
 }
 

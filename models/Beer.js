@@ -9,7 +9,8 @@ const beerSchema = Schema({
   ibu: Number,
   food_pairing: String,
   image_url: String,
-  id: Number
+  id: Number,
+  price: Number
 })
 
 module.exports = mongoose.model('Beer', beerSchema)

@@ -13,6 +13,7 @@ const data = [
     "ebc": 20,
     "srm": 10,
     "ph": 4.4,
+    "price": 12.50,
     "attenuation_level": 75,
     "volume": {
       "value": 20,
@@ -135,6 +136,7 @@ const data = [
     "ebc": 15,
     "srm": 15,
     "ph": 4.4,
+    "price":11.50,
     "attenuation_level": 76,
     "volume": {
       "value": 20,
@@ -249,6 +251,7 @@ const data = [
     "ebc": 8,
     "srm": 4,
     "ph": 3.2,
+    "price":13.50,
     "attenuation_level": 83,
     "volume": {
       "value": 20,
@@ -363,6 +366,7 @@ const data = [
     "ebc": 30,
     "srm": 15,
     "ph": 4.4,
+    "price":15.50,
     "attenuation_level": 80,
     "volume": {
       "value": 20,
@@ -501,6 +505,7 @@ const data = [
     "ebc": 10,
     "srm": 5,
     "ph": 4.4,
+    "price":13.50,
     "attenuation_level": 67,
     "volume": {
       "value": 20,
@@ -598,6 +603,7 @@ const data = [
     "ebc": 15,
     "srm": 7.5,
     "ph": 4.4,
+    "price":9.50,
     "attenuation_level": 88.9,
     "volume": {
       "value": 20,
@@ -729,6 +735,7 @@ const data = [
     "ebc": 80,
     "srm": 40,
     "ph": 5.3,
+    "price":12.50,
     "attenuation_level": 84,
     "volume": {
       "value": 20,
@@ -887,6 +894,7 @@ const data = [
     "ebc": 12,
     "srm": 6,
     "ph": 4.4,
+    "price":13.50,
     "attenuation_level": 78,
     "volume": {
       "value": 20,
@@ -1025,6 +1033,7 @@ const data = [
     "ebc": 84,
     "srm": 42,
     "ph": 5.6,
+    "price":11.50,
     "attenuation_level": 83,
     "volume": {
       "value": 20,
@@ -1164,6 +1173,7 @@ const data = [
     "image_url": "https://images.punkapi.com/v2/10.png",
     "abv": 7.5,
     "ibu": 75,
+    "price":14.50,
     "target_fg": 1013,
     "target_og": 1068,
     "ebc": 22,
@@ -1264,6 +1274,7 @@ const data = [
     "ebc": 120,
     "srm": 60,
     "ph": 4.4,
+    "price":1.50,
     "attenuation_level": 74.7,
     "volume": {
       "value": 20,
@@ -1444,6 +1455,7 @@ const data = [
     "ebc": 200,
     "srm": 100,
     "ph": 4.2,
+    "price":13.50,
     "attenuation_level": 77,
     "volume": {
       "value": 20,
@@ -1600,6 +1612,7 @@ const data = [
     "ebc": 140,
     "srm": 70,
     "ph": 5.2,
+    "price":13.50,
     "attenuation_level": 74.5,
     "volume": {
       "value": 20,
@@ -1718,6 +1731,7 @@ const data = [
     "ebc": 62,
     "srm": 31,
     "ph": 4.4,
+    "price":15.50,
     "attenuation_level": 72.8,
     "volume": {
       "value": 20,
@@ -1837,6 +1851,7 @@ const data = [
     "ebc": 40,
     "srm": 20,
     "ph": 4.4,
+    "price":16.50,
     "attenuation_level": 85,
     "volume": {
       "value": 20,
@@ -1950,6 +1965,7 @@ const data = [
     "ebc": 219,
     "srm": 109.5,
     "ph": 4.4,
+    "price":20,
     "attenuation_level": 70.1,
     "volume": {
       "value": 20,
@@ -2125,6 +2141,7 @@ const data = [
     "ebc": 70,
     "srm": 35,
     "ph": null,
+    "price":14.50,
     "attenuation_level": 87,
     "volume": {
       "value": 20,
@@ -2310,6 +2327,7 @@ const data = [
     "image_url": "https://images.punkapi.com/v2/18.png",
     "abv": 6,
     "ibu": 70,
+    "price":13.50,
     "target_fg": 1012,
     "target_og": 1058,
     "ebc": 25,
@@ -2473,6 +2491,7 @@ const data = [
     "ebc": null,
     "srm": null,
     "ph": 4.4,
+    "price":10.50,
     "attenuation_level": 83,
     "volume": {
       "value": 20,
@@ -2606,6 +2625,7 @@ const data = [
     "ebc": 24,
     "srm": 12,
     "ph": 4.4,
+    "price":11.50,
     "attenuation_level": 85,
     "volume": {
       "value": 20,
@@ -2701,6 +2721,7 @@ const data = [
     "ebc": 30,
     "srm": 15,
     "ph": 4,
+    "price":16.50,
     "attenuation_level": 81.8,
     "volume": {
       "value": 20,
@@ -2836,6 +2857,7 @@ const data = [
     "image_url": "https://images.punkapi.com/v2/22.png",
     "abv": 12.5,
     "ibu": 100,
+    "price":14.50,
     "target_fg": 1030,
     "target_og": 1093,
     "ebc": 36,
@@ -2938,11 +2960,13 @@ const data = [
     "image_url": "https://images.punkapi.com/v2/23.png",
     "abv": 8,
     "ibu": 60,
+    "price":13.50,
     "target_fg": 1010,
     "target_og": 1082,
     "ebc": 12,
     "srm": 6,
     "ph": 4.4,
+    "price":12.50,
     "attenuation_level": 86,
     "volume": {
       "value": 20,
@@ -3078,6 +3102,7 @@ const data = [
     "ebc": null,
     "srm": null,
     "ph": 4.4,
+    "price":13.50,
     "attenuation_level": 100,
     "volume": {
       "value": 20,
@@ -3186,6 +3211,7 @@ const data = [
     "ebc": 8,
     "srm": 4,
     "ph": 4.4,
+    "price":17.50,
     "attenuation_level": 79,
     "volume": {
       "value": 20,

@@ -17,6 +17,7 @@ const BeerShow = ({ beers, match }) => {
           <th>Description</th>
           <th>Food Pairing</th>
           <th>Image</th>
+          <th>Price <small>($/gallon)</small></th>
           </tr>
          <tr> 
       <td>{ currentBeer.name }</td> 
@@ -26,6 +27,7 @@ const BeerShow = ({ beers, match }) => {
       <td className="description">{ currentBeer.description }</td>
       <td>{ currentBeer.food_pairing }</td>
       <td><img src={ currentBeer.image_url }/></td>
+      <td>{ currentBeer.price}</td>
       </tr>
       </table>
       </div>

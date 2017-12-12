@@ -6,3 +6,9 @@ img {
   max-height: 200px;
   max-width: 100px;
 }
+
+.table {
+  min-width: 800px;
+  display: flex;
+  justify-content: space-evenly;
+}

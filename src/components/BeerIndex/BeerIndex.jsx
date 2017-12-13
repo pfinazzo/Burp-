@@ -1,3 +1,4 @@
+
 import React from 'react';
 import './BeerIndex.css';
 import { Link } from 'react-router-dom';
@@ -6,6 +7,9 @@ const BeerIndex = (props) => {
   return (
   <table className="table">
     <tbody>
+      <br />
+      <br />
+      <br />
       <tr>
         <th>Name</th>
         <th>Image</th>

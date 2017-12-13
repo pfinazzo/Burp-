@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt')
 mongoose.Promise = global.Promise;
 
 mongoose.connect("mongodb://localhost/beers", {useMongoClient: true});

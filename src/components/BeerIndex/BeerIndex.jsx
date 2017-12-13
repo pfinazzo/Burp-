@@ -5,11 +5,9 @@ import { Link } from 'react-router-dom';
 
 const BeerIndex = (props) => {
   return (
+    <div className="table-wrap">
   <table className="table">
     <tbody>
-      <br />
-      <br />
-      <br />
       <tr>
         <th>Name</th>
         <th>Image</th>
@@ -22,7 +20,7 @@ const BeerIndex = (props) => {
           <td>{beer.name}</td>
           <td><img src={beer.image_url}/></td>
           <td>{beer.price}</td>
-          <td><Link className="btn btn-success"to={`beers/${beer._id}`}>View Beer</Link></td>
+          <td><Link className="btn btn-success"to={`beers/${beer._id}`}>More Info</Link></td>
           <td>
             <Link to="/checkout" className="btn btn-success">Add to Cart</Link>
           </td>
@@ -30,6 +28,7 @@ const BeerIndex = (props) => {
       )}
     </tbody>
   </table>
+  </div>
   )
 }
 

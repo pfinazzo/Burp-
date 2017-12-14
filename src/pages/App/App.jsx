@@ -114,7 +114,12 @@ render() {
 
           <Route path="/beers/:beer_id" render={(match) => <BeerShow beers={this.state.beers} 
                                                                             { ...match} 
-                                                                       cart={this.state.cart}/> } />
+                                                                            cart={this.state.cart} 
+                                                                            user={this.state.user}
+                                                                            cartLength={this.state.cart.length}
+                                                                      handleRenderCart={this.handleRenderCart} 
+                                                                         getOccurrence={this.getOccurrence}
+                                                                         count={this.state.count}/> } />
                                                                        
               </Switch>
       </div>

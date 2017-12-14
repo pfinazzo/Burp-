@@ -1,7 +1,8 @@
 import React from 'react';
-import './BeerShow.css'
+import './BeerShow.css';
+import { Link } from 'react-router-dom';
 
-const BeerShow = ({ beers, match }) => {
+const BeerShow = ({ beers, match}, props) => {
   let currentBeer = (beers && beers.length) ? beers.filter(beer => beer._id === match.params.beer_id)[0] 
                                             : false
   return (
@@ -29,6 +30,10 @@ const BeerShow = ({ beers, match }) => {
       <td className="cell">{ currentBeer.food_pairing }</td>
       <td className="cell"><img src={ currentBeer.image_url } alt="Beer"/></td>
       <td className="cell">{ currentBeer.price}</td>
+      
+            {props.user ? <td className="cell"><button onClick={() => {props.cart.push(currentBeer); console.log(props.cart); props.handleRenderCart()}} className="btn btn-success">Add to Cart</button></td> : <td className="cell"><Link to="/login" className="btn btn-success">Add to Cart</Link></td>}
+            
+          
       </tr>
       </tbody>
       </table>

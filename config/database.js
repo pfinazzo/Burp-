@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-mongoose.connect("mongodb://admin:admin@ds044887.mlab.com:44887/burp");
+mongoose.connect(process.env.DATABASE_URL);
 
 
 

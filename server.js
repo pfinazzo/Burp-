@@ -4,13 +4,14 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const beers = require('./routes/api/beers')
 const app = express();
+var favicon = require('serve-favicon');
 
 require('dotenv').config();
 
 require('./config/database');
 
 app.use(logger('dev'));
-
+app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({encoded: true}));

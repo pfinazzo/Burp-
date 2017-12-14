@@ -12,7 +12,7 @@ const NavBar = (props) => {
     <header>
       <h1 className="center nav">
       <Link to='' className='btn btn-primary big' onClick={props.handleLogout}>Log Out</Link>
-      <Link className="btn btn-primary big" to="/beers">Beers</Link> 
+      <Link className="btn btn-success big" to="/beers">Beers</Link> 
         <Link className="btn btn-primary big" to="/checkout">Cart</Link>
         </h1>
         </header>

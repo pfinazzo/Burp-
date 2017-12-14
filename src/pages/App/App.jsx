@@ -19,6 +19,7 @@ class App extends Component {
     this.state = {
       beers: [],
       user: '',
+      cart: []
     }
   }
 
@@ -65,14 +66,13 @@ render() {
       <div>
           <NavBar checked={this.state.checked} user={this.state.user} handleLogout={this.handleLogout}/>
             <Switch>
-              <Route exact path="/" render ={(props) => <BeerIndex {...props} beers={this.state.beers} addItem={this.addItem} user={this.state.user}/>}/>
-              <Route path="/checkout" render={() => <Checkout />}/>
+              <Route exact path="/" render ={(props) => <BeerIndex {...props} beers={this.state.beers} addItem={this.addItem} user={this.state.user} cart={this.state.cart}/>}/>
+              <Route path="/checkout" render={(props) => this.state.user ? <Checkout cart={this.state.cart} user={this.state.user}/>: <LoginPage {...props} handleLogin={this.handleLogin}/>}/>
               <Route exact path="/login" render={(props) => <LoginPage {...props} handleLogin={this.handleLogin}/>} />
               <Route exact path="/signup" render={(props) => <SignupPage {...props} handleSignup={this.handleSignup}/>} />
-              <Route exact path="/beers" render ={(props) => <BeerIndex {...props} beers={this.state.beers} addItem={this.addItem} user={this.state.user}/>}/>
-              <Route path="/checkout" render={() => <Checkout />}/>
-              <Route path="/confirmation" render={() => <Confirmation />}/>
-              <Route path="/beers/:beer_id" render={ (match) => <BeerShow beers={this.state.beers} { ...match} /> } />
+              <Route exact path="/beers" render ={(props) => <BeerIndex {...props} beers={this.state.beers} addItem={this.addItem} user={this.state.user} cart={this.state.cart}/>}/>
+              <Route path="/confirmation" render={() => <Confirmation cart={this.state.cart} user={this.state.user}/>}/>
+              <Route path="/beers/:beer_id" render={ (match) => <BeerShow beers={this.state.beers} { ...match} cart={this.state.cart}/> } />
             </Switch>
       </div>
     );

@@ -11,7 +11,7 @@ const NavBar = (props) => {
       <span className="center nav">WELCOME, {props.user.name}</span>
     <header>
       <h1 className="center nav">
-      <Link to='' className='btn btn-primary big' onClick={props.handleLogout}>Log Out</Link>
+      <Link to='/login' className='btn btn-primary big' onClick={props.handleLogout}>Log Out</Link>
       <Link className="btn btn-success big" to="/beers">Beers</Link> 
         <Link className="btn btn-primary big" to="/checkout">Cart</Link>
         </h1>
@@ -23,7 +23,7 @@ const NavBar = (props) => {
       <header className="center nav">
       <h1 className="center nav">
       <Link className="btn btn-primary big" to="/login">Login</Link>
-        <Link className="btn btn-primary big" to="/beers">Beers</Link>
+        <Link className="btn btn-success big" to="/beers">Beers</Link>
         <Link className="btn btn-primary big" to="/signup">Sign Up</Link> 
       </h1>
     </header>

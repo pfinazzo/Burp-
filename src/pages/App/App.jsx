@@ -19,8 +19,7 @@ class App extends Component {
     this.state = {
       beers: [],
       user: '',
-      cart: [],
-      count: 0
+      cart: []
     }
   }
 
@@ -100,7 +99,6 @@ render() {
 
           <Route exact path="/beers" render ={(props) => <BeerIndex {...props} 
                                                               beers={this.state.beers} 
-                                                            addItem={this.addItem} 
                                                                user={this.state.user} 
                                                                cart={this.state.cart} 
                                                          cartLength={this.state.cart.length}
@@ -112,7 +110,8 @@ render() {
           <Route path="/confirmation" render={() => <Confirmation     cart={this.state.cart} 
                                                                       user={this.state.user}/>}/>
 
-          <Route path="/beers/:beer_id" render={(match) => <BeerShow beers={this.state.beers} 
+          <Route path="/beers/:beer_id" render={(match, props) => <BeerShow beers={this.state.beers}
+                                                                            {...props} 
                                                                             { ...match} 
                                                                             cart={this.state.cart} 
                                                                             user={this.state.user}

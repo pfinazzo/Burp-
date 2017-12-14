@@ -47,7 +47,7 @@ handleLogin = () => {
   this.setState({user: userService.getUser()});
 }
 
-handleAddCart = () => {
+handleRenderCart = () => {
   this.setState({cart: this.state.cart})
 }
 
@@ -76,7 +76,7 @@ render() {
                                                           user={this.state.user} 
                                                           cart={this.state.cart} 
                                                     cartLength={this.state.cart.length}
-                                                 handleAddCart={this.handleAddCart} />}/>
+                                                 handleRenderCart={this.handleRenderCart} />}/>
 
           <Route path="/checkout" render={(props) => this.state.user ? <Checkout cart={this.state.cart} 
                                                                            cartLength={this.state.cart.length} 
@@ -93,7 +93,7 @@ render() {
                                                                user={this.state.user} 
                                                                cart={this.state.cart} 
                                                          cartLength={this.state.cart.length}
-                                                      handleAddCart={this.handleAddCart}
+                                                      handleRenderCart={this.handleRenderCart}
                                                                     />}/>
 
           <Route path="/confirmation" render={() => <Confirmation     cart={this.state.cart} 

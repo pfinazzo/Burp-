@@ -26,6 +26,10 @@ class LoginForm extends Component {
       .catch(err => alert('Invalid Credentials!'));
   }
 
+  isFormInvalid() {
+    return !(this.state.email && this.state.pw);
+  }
+
   render() {
     return (
       <div>
@@ -47,7 +51,7 @@ class LoginForm extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-12 text-center">
-              <button className="btn btn-success">Log In</button>&nbsp;&nbsp;&nbsp;
+              <button disabled ={this.isFormInvalid()} className="btn btn-success">Log In</button>&nbsp;&nbsp;&nbsp;
             </div>
           </div>
         </form>

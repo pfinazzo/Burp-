@@ -1,12 +1,12 @@
 const Beer = require('../models/Beer');
 
-function get (req, res) {
+function index (req, res) {
   Beer.find({})
-  .then(beer => {
-    res.json(beer)
-  })
+  .then(beers => (
+    res.json(beers)
+  ))
 }
 
 module.exports = {
-  get
+  index
 };

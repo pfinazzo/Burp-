@@ -4,8 +4,9 @@ import './BeerIndex.css';
 import { Link } from 'react-router-dom';
 
 const BeerIndex = (props) => {
+  // if (props) {
   return (
-    <div className="table-wrap">
+<div className="table-wrap">
   <table className="table">
     <tbody>
       <tr>
@@ -18,7 +19,7 @@ const BeerIndex = (props) => {
         {props.beers.map((beer, idx) =>
         <tr key={idx}>
           <td>{beer.name}</td>
-          <td><img src={beer.image_url}/></td>
+          <td><img src={beer.image_url} alt="Beer"/></td>
           <td>{beer.price}</td>
           <td><Link className="btn btn-success"to={`beers/${beer._id}`}>More Info</Link></td>
           <td>
@@ -28,8 +29,14 @@ const BeerIndex = (props) => {
       )}
     </tbody>
   </table>
-  </div>
+</div>
   )
 }
+//   else {
+//     return ( 
+//       <p>Loading</p>
+//     )
+//   }
+// // }
 
 export default BeerIndex

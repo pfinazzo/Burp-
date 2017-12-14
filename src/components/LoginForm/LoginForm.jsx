@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import userService from '../../utils/userService';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -11,22 +12,25 @@ class LoginForm extends Component {
   }
 
   handleChange = (field, e) => {
-    // TODO: implement in an elegant way
+    this.setState({
+      [field]: e.target.value
+    });
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
+    userService.login(this.state)
+      .then(() => {
+        this.props.handleLogin();
+        this.props.history.push('/');
+      })
+      .catch(err => alert('Invalid Credentials!'));
   }
 
   render() {
     return (
-      <div className="form-horizontal">
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+      <div>
+        <header className="header-footer">Log In</header>
         <form className="form-horizontal" onSubmit={this.handleSubmit} >
           <div className="form-group">
             <div className="col-sm-12">
@@ -40,8 +44,8 @@ class LoginForm extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-12 text-center">
-              <button className="btn btn-success">Log In</button>&nbsp;&nbsp;&nbsp;
-              <Link className="link" to='/'>Cancel</Link>
+              <button className="btn btn-default">Log In</button>&nbsp;&nbsp;&nbsp;
+              <Link to='/'>Cancel</Link>
             </div>
           </div>
         </form>

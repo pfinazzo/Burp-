@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './BeerShow.css'
 
 const BeerShow = ({ beers, match }) => {
@@ -26,7 +26,7 @@ const BeerShow = ({ beers, match }) => {
       <td>{ currentBeer.ibu }</td>
       <td className="description">{ currentBeer.description }</td>
       <td>{ currentBeer.food_pairing }</td>
-      <td><img src={ currentBeer.image_url }/></td>
+      <td><img src={ currentBeer.image_url } alt="Beer"/></td>
       <td>{ currentBeer.price}</td>
       </tr>
       </table>

@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter,
-  Link,
   Switch,
   Route,
-  Redirect
 } from 'react-router-dom';
 import './App.css';
 import BeerIndex from '../../components/BeerIndex/BeerIndex';
@@ -14,13 +11,14 @@ import NavBar from '../../components/NavBar/NavBar';
 import BeerShow from '../../components/BeerShow/BeerShow'
 import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
+import userService from '../../utils/userService';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       beers: [],
-      checked: false
+      user: '',
     }
   }
 
@@ -28,39 +26,50 @@ class App extends Component {
 //methods
 
 addItem(props) {
-  fetch('/beers', {
+  fetch('/api/beers', {
     method: "POST",
     headers: { 'Content.type' : 'application/json'},
     body: JSON.stringify({beer: props.beer})
   })
 }
 
-loggedIn = () => {
-  this.setState({
-      checked: !this.state.checked
-  })
+handleLogout = () => {
+  userService.logout();
+  this.setState({user: null});
 }
+
+handleSignup = () => {
+  this.setState({user: userService.getUser()});
+}
+
+handleLogin = () => {
+  this.setState({user: userService.getUser()});
+}
+
 
 
 // lifecyle methods
 
 componentDidMount() {
-  fetch('/beers').then(res => res.json())
+  fetch('/api/beers').then(res => res.json())
   .then(beers => {
     this.setState({
       beers
     })
   })
+  let user = userService.getUser();
+  this.setState({user});
 }
 render() {
     return (
       <div>
           <NavBar checked={this.state.checked}/>
             <Switch>
-              <Route exact path="/" render ={(props) => this.state.checked ? <BeerIndex beers={this.state.beers}/> : <LoginPage beers={this.state.beers} loggedIn={this.loggedIn} checked={this.state.checked}/>} />
-              <Route path="/login" render={() => <LoginPage />} />
-              <Route path="/signup" render={() => <SignupPage />} />
-              <Route exact path="/beers" render ={() => <BeerIndex beers={this.state.beers} addItem={this.addItem}/>}/>
+              <Route exact path="/" render ={(props) => <LoginPage beers={this.state.beers} {...props}
+                handleLogin={this.handleLogin}/>} />
+              <Route exact path="/login" render={(props) => <LoginPage {...props} handleLogin={this.handleLogin}/>} />
+              <Route exact path="/signup" render={(props) => <SignupPage {...props} handleSignup={this.handleSignup}/>} />
+              <Route exact path="/beers" render ={(props) => <BeerIndex {...props} beers={this.state.beers} addItem={this.addItem}/>}/>
               <Route path="/checkout" render={() => <Checkout />}/>
               <Route path="/confirmation" render={() => <Confirmation />}/>
               <Route path="/beers/:beer_id" render={ (match) => <BeerShow beers={this.state.beers} { ...match} /> } />

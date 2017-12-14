@@ -4,6 +4,8 @@ th, td, tr {
 }
 .table-wrap {
   margin: 50px;
+  display: inline;
+  text-align: center;
 }
 
 img {
@@ -13,8 +15,6 @@ img {
 
 .table {
   min-width: 800px;
-  display: flex;
-  justify-content: space-evenly;
 }
 
 .width {
@@ -24,4 +24,8 @@ img {
 .cell {
   text-align: center;
   padding: 10px;
+}
+
+.img {
+  size: 5px;
 }

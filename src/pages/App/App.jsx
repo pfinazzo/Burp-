@@ -19,28 +19,20 @@ class App extends Component {
     this.state = {
       beers: [],
       user: '',
-      cart: []
+      cart: [],
+      totalPriceArray: [],
     }
   }
 
 
 //methods
 
-
-addItem(props) {
-  fetch('/api/beers', {
-    method: "POST",
-    headers: { 'Content.type' : 'application/json'},
-    body: JSON.stringify({beer: props.beer})
-  })
-}
-
 getOccurrence(array, value) {
   var count = 0;
-  array.forEach((elem) => (elem === value && count++));
+  array.forEach(elem => (elem === value && count++));
   return count;
-  this.setState({count});
 }
+
 
 handleLogout = () => {
   userService.logout();
@@ -84,13 +76,14 @@ render() {
                                                     cartLength={this.state.cart.length}
                                               handleRenderCart={this.handleRenderCart} 
                                                  getOccurrence={this.getOccurrence}
-                                                 count={this.state.count}/>}/>
+/>}/>
 
           <Route path="/checkout" render={(props) => this.state.user ? <Checkout cart={this.state.cart} 
                                                                            cartLength={this.state.cart.length} 
                                                                                  user={this.state.user}
                                                                         getOccurrence={this.getOccurrence}
-                                                                         count={this.state.count}/> 
+                                                                        totalPriceArray={this.state.totalPriceArray}/> 
+
                                                                      : <LoginPage {...props} handleLogin={this.handleLogin}/>}/>
 
           <Route exact path="/login" render={(props) => <LoginPage {...props} handleLogin={this.handleLogin}/>} />
@@ -104,7 +97,7 @@ render() {
                                                          cartLength={this.state.cart.length}
                                                    handleRenderCart={this.handleRenderCart}
                                                       getOccurrence={this.getOccurrence}
-                                                      count={this.state.count}
+    
                                                                     />}/>
 
           <Route path="/confirmation" render={() => <Confirmation     cart={this.state.cart} 
@@ -118,7 +111,7 @@ render() {
                                                                             cartLength={this.state.cart.length}
                                                                       handleRenderCart={this.handleRenderCart} 
                                                                          getOccurrence={this.getOccurrence}
-                                                                         count={this.state.count}/> } />
+                        /> } />
                                                                        
               </Switch>
       </div>

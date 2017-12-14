@@ -6,12 +6,12 @@ const BeerShow = ({ beers, match, user, cart, handleRenderCart, cartLength }) =>
   let currentBeer = (beers && beers.length) ? beers.filter(beer => beer._id === match.params.beer_id)[0] 
                                             : false
   return (
-    <div className="container">
+    <div>
     <h2 className="center">{cart ? <p>Cart: {cartLength} </p> : <p></p>}</h2>
       { currentBeer ? 
-      <div>
-        <table>
-          <tbody className="table-format">
+      <div className="table-wrap">
+        <table className="table">
+          <tbody>
           <tr>
           <th>Name</th>
           <th>Type</th>

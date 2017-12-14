@@ -23,7 +23,8 @@ const BeerIndex = (props) => {
           <td>{beer.price}</td>
           <td><Link className="btn btn-success"to={`beers/${beer._id}`}>More Info</Link></td>
           <td>
-            <Link to="/checkout" className="btn btn-success">Add to Cart</Link>
+            {props.user ? <Link to="/checkout" className="btn btn-success">Add to Cart</Link> : <Link to="/login" className="btn btn-success">Add to Cart</Link>}
+            
           </td>
         </tr>
       )}

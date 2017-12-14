@@ -31,7 +31,7 @@ const Checkout = (props) => {
           return (
             <tr key={idx}>
               <td className="cell">{beer.name}</td>
-              <td className="cell img"><img src={beer.image_url}></img></td>
+              <td className="cell img"><img src={beer.image_url} alt="beer"></img></td>
               <td className="cell">{props.getOccurrence(props.cart, beer)}</td>
               <td className="cell">{beer.price}</td>
               <td className="cell">{computedPrice}</td>

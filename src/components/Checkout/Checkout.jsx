@@ -24,15 +24,16 @@ const Checkout = (props) => {
         <th>Computed Price</th>
         </tr>
         {duplicateArray.map(function(beer, idx) { 
-          let computedPrice = beer.price * props.getOccurrence(props.cart, beer);
+          let quantity = props.getOccurrence(props.cart, beer);
+          let computedPrice = beer.price * quantity;
           props.totalPriceArray.push(computedPrice); 
-          totalPrice = props.totalPriceArray.reduce((acc, curr) => acc + curr);
+          totalPrice = props.totalPriceArray.reduce(function(a, b) { return a + b; }, 0);
           // props.getTotalPrice()
           return (
             <tr key={idx}>
               <td className="cell">{beer.name}</td>
               <td className="cell img"><img src={beer.image_url} alt="beer"></img></td>
-              <td className="cell">{props.getOccurrence(props.cart, beer)}</td>
+              <td className="cell">{quantity}</td>
               <td className="cell">{beer.price}</td>
               <td className="cell">{computedPrice}</td>
             </tr>
@@ -41,6 +42,7 @@ const Checkout = (props) => {
       </tbody>
     </table>
     {totalPrice ? <h1>Total: ${totalPrice}</h1> : <p></p>}
+
   </div>
   )
 

@@ -51,6 +51,11 @@ handleRenderCart = () => {
   this.setState({cart: this.state.cart})
 }
 
+remove(array, element) {
+  const index = array.indexOf(element);
+  array.splice(index, 1);
+}
+
 // lifecyle methods
 
 componentDidMount() {
@@ -76,13 +81,17 @@ render() {
                                                     cartLength={this.state.cart.length}
                                               handleRenderCart={this.handleRenderCart} 
                                                  getOccurrence={this.getOccurrence}
+                                                 remove={this.remove}
 />}/>
 
           <Route path="/checkout" render={(props) => this.state.user ? <Checkout cart={this.state.cart} 
                                                                            cartLength={this.state.cart.length} 
                                                                                  user={this.state.user}
                                                                         getOccurrence={this.getOccurrence}
-                                                                        totalPriceArray={this.state.totalPriceArray}/> 
+                                                                        totalPriceArray={this.state.totalPriceArray}
+                                                                                 remove={this.remove}
+                                                                                 handleRenderCart={this.handleRenderCart}
+                                                                                 beers={this.state.beers} /> 
 
                                                                      : <LoginPage {...props} handleLogin={this.handleLogin}/>}/>
 
@@ -97,6 +106,7 @@ render() {
                                                          cartLength={this.state.cart.length}
                                                    handleRenderCart={this.handleRenderCart}
                                                       getOccurrence={this.getOccurrence}
+                                                             remove={this.remove}
     
                                                                     />}/>
 
@@ -111,6 +121,7 @@ render() {
                                                                             cartLength={this.state.cart.length}
                                                                       handleRenderCart={this.handleRenderCart} 
                                                                          getOccurrence={this.getOccurrence}
+                                                                                remove={this.remove}
                         /> } />
                                                                        
               </Switch>

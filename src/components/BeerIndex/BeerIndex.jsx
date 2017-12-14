@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 const BeerIndex = (props) => {
   // if (props) {
   return (
+    <div>
+  <h2 className="center">{props.cart ? <p>Cart: {props.cartLength} </p> : <p></p>}</h2>
 <div className="table-wrap">
   <table className="table">
     <tbody>
@@ -23,13 +25,14 @@ const BeerIndex = (props) => {
           <td className="cell">{beer.price}</td>
           <td className="cell"><Link className="btn btn-success"to={`beers/${beer._id}`}>More Info</Link></td>
           <td className="cell">
-            {props.user ? <Link to="/checkout" className="btn btn-success">Add to Cart</Link> : <Link to="/login" className="btn btn-success">Add to Cart</Link>}
+            {props.user ? <button onClick={() => {props.cart.push(beer); console.log(props.cart); props.handleAddCart()}} className="btn btn-success">Add to Cart</button> : <Link to="/login" className="btn btn-success">Add to Cart</Link>}
             
           </td>
         </tr>
       )}
     </tbody>
   </table>
+</div>
 </div>
   )
 }

@@ -1,0 +1,27 @@
+th, td, tr {
+  border-top: 3px solid lightblue; 
+  border: 3px solid lightblue;
+}
+.table-wrap {
+  margin: 50px;
+}
+
+img {
+  max-height: 200px;
+  max-width: 100px;
+}
+
+.table {
+  min-width: 800px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.width {
+  width: 20rem;
+}
+
+.cell {
+  text-align: center;
+  padding: 10px;
+}

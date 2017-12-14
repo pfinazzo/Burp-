@@ -18,7 +18,8 @@ const NavBar = (props) => {
         </header>
         </div>
                       :
-    <div className="center nav">
+    <div className="container">
+      <h1 className="center nav">Burp</h1>
       <header className="center nav">
       <h1 className="center nav">
       <Link className="btn btn-primary big" to="/login">Login</Link>

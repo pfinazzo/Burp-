@@ -20,3 +20,8 @@ img {
 .width {
   width: 20rem;
 }
+
+.cell {
+  text-align: center;
+  padding: 10px;
+}

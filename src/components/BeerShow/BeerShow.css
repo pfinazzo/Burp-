@@ -1,5 +1,6 @@
-.description {
+.cell {
   max-width: 200px;
+  padding: 10px;
 }
 
 .table-format {

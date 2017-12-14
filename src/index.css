@@ -1,13 +1,17 @@
 body {
-  background-image: url('https://wallpaperscraft.com/image/spots_background_light_blur_68629_1920x1080.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  /* background: linear-gradient(
+    rgba(0, 0, 0, 0.7), 
+    rgba(0, 0, 0, 0.7)
+  ), url('http://bgfons.com/uploads/beer/beer_texture1949.jpg'); */
+  background: url('https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Free-DownloadBeer-Background-PIC-WPD0012749.jpg')  no-repeat fixed 100% 100%;
+  /* background-repeat:;
+  background-attachment: fixed; */
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  color: lightblue;
+  color: white;
 }
 
 .link {
-  color: lightblue;
+  color: white;
 }

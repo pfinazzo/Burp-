@@ -10,19 +10,19 @@ const BeerIndex = (props) => {
   <table className="table">
     <tbody>
       <tr>
-        <th>Name</th>
-        <th>Image</th>
-        <th>Price <small>($/gallon)</small></th>
-        <th>More info</th>
-        <th>Purchase</th>
+        <th className="cell">Name</th>
+        <th className="cell">Image</th>
+        <th className="cell">Price <small>($/gallon)</small></th>
+        <th className="cell">More info</th>
+        <th className="cell">Purchase</th>
       </tr>
         {props.beers.map((beer, idx) =>
         <tr key={idx}>
-          <td>{beer.name}</td>
-          <td><img src={beer.image_url} alt="Beer"/></td>
-          <td>{beer.price}</td>
-          <td><Link className="btn btn-success"to={`beers/${beer._id}`}>More Info</Link></td>
-          <td>
+          <td className="cell">{beer.name}</td>
+          <td className="cell"><img src={beer.image_url} alt="Beer"/></td>
+          <td className="cell">{beer.price}</td>
+          <td className="cell"><Link className="btn btn-success"to={`beers/${beer._id}`}>More Info</Link></td>
+          <td className="cell">
             {props.user ? <Link to="/checkout" className="btn btn-success">Add to Cart</Link> : <Link to="/login" className="btn btn-success">Add to Cart</Link>}
             
           </td>

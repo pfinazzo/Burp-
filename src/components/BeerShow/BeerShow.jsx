@@ -32,9 +32,7 @@ const BeerShow = ({ beers, match, user, cart, handleRenderCart, cartLength }) =>
       <td className="cell"><img src={ currentBeer.image_url } alt="Beer"/></td>
       <td className="cell">{ currentBeer.price}</td>
       <td className="cell">
-        { console.log('Props are ', user) }
-        {user ? <button onClick={() => {cart.push(currentBeer); console.log(cart); handleRenderCart()}} className="btn btn-success">Add to Cart</button> : <Link to="/login" className="btn btn-success">Add to Cart</Link>}
-            
+        {user ? <div><button onClick={() => {cart.push(currentBeer); handleRenderCart()}} className="btn btn-success">Add to Cart</button><br /><br /><br /><Link to="/checkout"className="btn btn-success" >Go to Cart</Link></div> : <Link to="/login" className="btn btn-danger">Login First to Go to Cart</Link>}
           </td>
       
             {/* {user ? <td className="cell"><button onClick={() => {props.cart.push(currentBeer); console.log(props.cart); props.handleRenderCart()}} className="btn btn-success">Add to Cart</button></td> : <td className="cell"><Link to="/login" className="btn btn-success">Add to Cart</Link></td>} */}

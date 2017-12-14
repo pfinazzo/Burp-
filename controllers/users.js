@@ -7,6 +7,7 @@ function signup(req, res) {
   user.save()
     .then(user => {
       res.json({token: createJWT(user)});
+      res.redirect("/")
     })
     // User data invalid (prob duplicate email)
     .catch(err => res.status(400).json(err));

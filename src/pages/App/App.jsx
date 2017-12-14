@@ -51,22 +51,22 @@ handleLogin = () => {
 // lifecyle methods
 
 componentDidMount() {
+  let user = userService.getUser();
+  this.setState({user});
   fetch('/api/beers').then(res => res.json())
   .then(beers => {
     this.setState({
       beers
     })
   })
-  let user = userService.getUser();
-  this.setState({user});
 }
 render() {
     return (
       <div>
-          <NavBar checked={this.state.checked}/>
+          <NavBar checked={this.state.checked} user={this.state.user} handleLogout={this.handleLogout}/>
             <Switch>
-              <Route exact path="/" render ={(props) => <LoginPage beers={this.state.beers} {...props}
-                handleLogin={this.handleLogin}/>} />
+              <Route exact path="/" render ={(props) => <BeerIndex {...props} beers={this.state.beers} addItem={this.addItem}/>}/>
+              <Route path="/checkout" render={() => <Checkout />}/>
               <Route exact path="/login" render={(props) => <LoginPage {...props} handleLogin={this.handleLogin}/>} />
               <Route exact path="/signup" render={(props) => <SignupPage {...props} handleSignup={this.handleSignup}/>} />
               <Route exact path="/beers" render ={(props) => <BeerIndex {...props} beers={this.state.beers} addItem={this.addItem}/>}/>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Confirmation = () => {
   return (
-    <div>
+    <div className="container">>
       Confirmation
       </div>
   )

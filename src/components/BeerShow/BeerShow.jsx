@@ -5,10 +5,11 @@ const BeerShow = ({ beers, match }) => {
   let currentBeer = (beers && beers.length) ? beers.filter(beer => beer._id === match.params.beer_id)[0] 
                                             : false
   return (
-    <div>
+    <div className="container">
       { currentBeer ? 
       <div>
         <table>
+          <tbody className="table-format">
           <tr>
           <th>Name</th>
           <th>Tagline</th>
@@ -29,6 +30,7 @@ const BeerShow = ({ beers, match }) => {
       <td><img src={ currentBeer.image_url } alt="Beer"/></td>
       <td>{ currentBeer.price}</td>
       </tr>
+      </tbody>
       </table>
       </div>
       : <p>Loading</p> }

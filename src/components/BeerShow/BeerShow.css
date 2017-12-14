@@ -1,3 +1,7 @@
 .description {
   max-width: 200px;
 }
+
+.table-format {
+  text-align: center;
+}

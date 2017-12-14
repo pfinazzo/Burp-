@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import userService from '../../utils/userService';
 
 class LoginForm extends Component {
@@ -30,7 +29,11 @@ class LoginForm extends Component {
   render() {
     return (
       <div>
-        <header className="header-footer">Log In</header>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <form className="form-horizontal" onSubmit={this.handleSubmit} >
           <div className="form-group">
             <div className="col-sm-12">
@@ -44,8 +47,7 @@ class LoginForm extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-12 text-center">
-              <button className="btn btn-default">Log In</button>&nbsp;&nbsp;&nbsp;
-              <Link to='/'>Cancel</Link>
+              <button className="btn btn-success">Log In</button>&nbsp;&nbsp;&nbsp;
             </div>
           </div>
         </form>

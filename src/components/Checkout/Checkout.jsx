@@ -3,8 +3,6 @@ import './Checkout.css';
 
 
 const Checkout = (props) => {
-  console.log('props.cart =', props.cart);
-  // console.log('props.cart =', JSON.stringify(props.cart));
   let duplicateArray = [];
   props.cart.forEach(function(beer){
     if (!duplicateArray.includes(beer)){
@@ -30,9 +28,6 @@ const Checkout = (props) => {
           let quantity = props.getOccurrence(props.cart, beer);
           let computedPrice = beer.price * quantity;
           props.totalPriceArray.push(computedPrice); 
-          console.log(props.totalPriceArray, computedPrice)
-          totalPrice = props.totalPriceArray.reduce(function(a, b) { return a + b; }, 0);
-          // props.getTotalPrice()
           return (
             <tr key={idx}>
               <td className="cell">{beer.name}</td>

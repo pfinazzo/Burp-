@@ -3,6 +3,8 @@ import './Checkout.css';
 
 
 const Checkout = (props) => {
+  console.log('props.cart =', props.cart);
+  // console.log('props.cart =', JSON.stringify(props.cart));
   let duplicateArray = [];
   props.cart.forEach(function(beer){
     if (!duplicateArray.includes(beer)){
@@ -11,6 +13,8 @@ const Checkout = (props) => {
   });
 
     var totalPrice;
+
+  var total = calculateTotal(props.cart);
 
   return (
   <div className="container table-wrap">
@@ -42,12 +46,20 @@ const Checkout = (props) => {
       })}
       </tbody>
     </table>
-    {totalPrice ? <h1>Total: ${totalPrice}</h1> : <p></p>}
+    {total ? <h1>Total: ${total}</h1> : <p></p>}
 
   </div>
   )
 
 
+}
+
+function calculateTotal (cart) {
+  var total = cart.reduce((a, b) => {
+      return a + b.price
+  }, 0);
+
+  return total;
 }
 
 export default Checkout

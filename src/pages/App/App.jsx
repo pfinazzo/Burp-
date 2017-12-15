@@ -27,6 +27,10 @@ class App extends Component {
 
 //methods
 
+// refreshPage(){ 
+//   window.location.reload(); 
+// }
+
 getOccurrence(array, value) {
   var count = 0;
   array.forEach(elem => (elem === value && count++));
@@ -93,11 +97,12 @@ render() {
                                                                                  handleRenderCart={this.handleRenderCart}
                                                                                  beers={this.state.beers} /> 
 
-                                                                     : <LoginPage {...props} handleLogin={this.handleLogin}/>}/>
+                                                                     : <LoginPage {...props} handleLogin={this.handleLogin}
+                                                                     refreshPage={this.refreshPage}/>}/>
 
-          <Route exact path="/login" render={(props) => <LoginPage {...props} handleLogin={this.handleLogin}/>} />
+          <Route exact path="/login" render={(props) => <LoginPage refreshPage={this.refreshPage} {...props} handleLogin={this.handleLogin}/>} />
 
-          <Route exact path="/signup" render={(props) => <SignupPage {...props} handleSignup={this.handleSignup}/>} />
+          <Route exact path="/signup" render={(props) => <SignupPage refreshPage={this.refreshPage} {...props} handleSignup={this.handleSignup}/>} />
 
           <Route exact path="/beers" render ={(props) => <BeerIndex {...props} 
                                                               beers={this.state.beers} 

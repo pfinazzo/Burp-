@@ -47,13 +47,14 @@ handleLogin = () => {
   this.setState({user: userService.getUser()});
 }
 
-handleRenderCart = () => {
-  this.setState({cart: this.state.cart})
-}
 
 remove(array, element) {
   const index = array.indexOf(element);
   array.splice(index, 1);
+}
+
+handleRenderCart = () => {
+  this.setState({cart: this.state.cart})
 }
 
 // lifecyle methods
@@ -81,8 +82,7 @@ render() {
                                                     cartLength={this.state.cart.length}
                                               handleRenderCart={this.handleRenderCart} 
                                                  getOccurrence={this.getOccurrence}
-                                                 remove={this.remove}
-/>}/>
+                                                 remove={this.remove}/>} />
 
           <Route path="/checkout" render={(props) => this.state.user ? <Checkout cart={this.state.cart} 
                                                                            cartLength={this.state.cart.length} 
@@ -106,9 +106,7 @@ render() {
                                                          cartLength={this.state.cart.length}
                                                    handleRenderCart={this.handleRenderCart}
                                                       getOccurrence={this.getOccurrence}
-                                                             remove={this.remove}
-    
-                                                                    />}/>
+                                                             remove={this.remove} />}/>
 
           <Route path="/confirmation" render={() => <Confirmation     cart={this.state.cart} 
                                                                       user={this.state.user}/>}/>
@@ -121,11 +119,10 @@ render() {
                                                                             cartLength={this.state.cart.length}
                                                                       handleRenderCart={this.handleRenderCart} 
                                                                          getOccurrence={this.getOccurrence}
-                                                                                remove={this.remove}
-                        /> } />
+                                                                                remove={this.remove} /> } />
                                                                        
-              </Switch>
-      </div>
+          </Switch>
+    </div>
     );
   }
 }

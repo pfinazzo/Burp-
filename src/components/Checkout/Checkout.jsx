@@ -27,6 +27,7 @@ const Checkout = (props) => {
           let quantity = props.getOccurrence(props.cart, beer);
           let computedPrice = beer.price * quantity;
           props.totalPriceArray.push(computedPrice); 
+          console.log(props.totalPriceArray, computedPrice)
           totalPrice = props.totalPriceArray.reduce(function(a, b) { return a + b; }, 0);
           // props.getTotalPrice()
           return (

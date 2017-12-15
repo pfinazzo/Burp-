@@ -32,7 +32,7 @@ const BeerShow = ({ beers, match, user, cart, handleRenderCart, cartLength, remo
       <td className="cell"><img src={ currentBeer.image_url } alt="Beer"/></td>
       <td className="cell">{ currentBeer.price}</td>
       <td className="cell">
-        {user ? <div><button onClick={() => {cart.push(currentBeer); handleRenderCart()}} className="btn btn-success">Add to Cart</button><br /><br /><br /><button disabled={!(cart.includes(currentBeer))} onClick={() => {remove(cart, currentBeer); handleRenderCart()}} className="btn btn-danger">Remove from Cart</button><br /><br /><br /><Link to="/checkout"className="btn btn-success" >Go to Cart</Link></div> : <Link to="/login" className="btn btn-danger">Login First to Go to Cart</Link>}
+        {user ? <div><button onClick={() => {cart.push(currentBeer); handleRenderCart()}} className="btn btn-success">Add to Cart</button><br /><br /><br /><button disabled={!(cart.includes(currentBeer))} onClick={() => {remove(cart, currentBeer); handleRenderCart()}} className="btn btn-danger">Remove from Cart</button><br /><br /><br /><Link to="/checkout"className="btn btn-success" >Go to Cart</Link></div> : <Link to="/login" className="btn btn-danger">Login First to Add to Cart</Link>}
           </td>
           
       </tr>

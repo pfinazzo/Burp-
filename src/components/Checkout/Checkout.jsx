@@ -15,7 +15,7 @@ const Checkout = (props) => {
   var total = calculateTotal(props.cart);
 if (duplicateArray[0] === undefined) {
   return(
-    <p class="center"> There's nothing in your cart! Return to the beers page to add beers to your cart!</p>
+    <h1 class="center"> There's nothing in your cart! Return to the beers page to add beers to your cart!</h1>
   )
 } 
   return (

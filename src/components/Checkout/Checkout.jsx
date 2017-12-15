@@ -1,5 +1,6 @@
 import React from 'react';
 import './Checkout.css';
+import {Link} from 'react-router-dom';
 
 
 const Checkout = (props) => {
@@ -12,7 +13,11 @@ const Checkout = (props) => {
 
 
   var total = calculateTotal(props.cart);
-
+if (duplicateArray[0] === undefined) {
+  return(
+    <p class="center"> There's nothing in your cart! Return to the beers page to add beers to your cart!</p>
+  )
+} 
   return (
   <div className="container table-wrap">
     <table className="table">
@@ -40,7 +45,8 @@ const Checkout = (props) => {
       })}
       </tbody>
     </table>
-    {total ? <h1>Total: ${total}</h1> : <p></p>}
+    {total ? <div><h1>Total: ${total}</h1>
+              <Link to="/confirmation" class="btn btn-success">Checkout</Link></div> : <p></p>}
 
   </div>
   )

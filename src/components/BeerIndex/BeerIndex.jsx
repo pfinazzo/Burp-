@@ -25,7 +25,7 @@ const BeerIndex = (props) => {
           <td className="cell">{beer.price}</td>
           <td className="cell"><Link className="btn btn-success"to={`beers/${beer._id}`}>More Info</Link></td>
           <td className="cell">
-            {props.user ? <div><button onClick={() => {props.cart.push(beer); props.handleRenderCart()}} className="btn btn-success">Add to Cart</button><br /><br /><br /><button onClick={() => {props.remove(props.cart, beer); console.log(props.cart); props.handleRenderCart()}} className="btn btn-danger">Remove from Cart</button></div>  : <Link to="/login" className="btn btn-danger">Login</Link>}
+            {props.user ? <div><button onClick={() => {props.cart.push(beer); props.handleRenderCart()}} className="btn btn-success">Add to Cart</button><br /><br /><br /><button disabled={!(props.cart.includes(beer))} onClick={() => {props.remove(props.cart, beer); console.log(props.cart); props.handleRenderCart()}} className="btn btn-danger">Remove from Cart</button></div>  : <Link to="/login" className="btn btn-danger">Login</Link>}
             
           </td>
         </tr>

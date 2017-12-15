@@ -12,7 +12,6 @@ const Checkout = (props) => {
     }
   });
 
-    var totalPrice;
 
   var total = calculateTotal(props.cart);
 

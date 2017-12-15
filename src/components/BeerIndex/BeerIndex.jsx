@@ -4,7 +4,6 @@ import './BeerIndex.css';
 import { Link } from 'react-router-dom';
 
 const BeerIndex = (props) => {
-  // if (props) {
   return (
     <div>
   <h2 className="center">{props.cart ? <p>Cart: {props.cartLength} </p> : <p></p>}</h2>
@@ -48,11 +47,6 @@ const BeerIndex = (props) => {
 </div>
   )
 }
-//   else {
-//     return ( 
-//       <p>Loading</p>
-//     )
-//   }
-// // }
+
 
 export default BeerIndex

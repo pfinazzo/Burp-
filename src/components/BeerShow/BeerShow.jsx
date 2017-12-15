@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const BeerShow = ({ beers, match, user, cart, handleRenderCart, cartLength, remove }) => {
   let currentBeer = (beers && beers.length) ? beers.filter(beer => beer._id === match.params.beer_id)[0] 
-                                            : false
+  : false
   return (
     <div>
     <h2 className="center">{cart ? <p>Cart: {cartLength} </p> : <p></p>}</h2>
@@ -34,9 +34,6 @@ const BeerShow = ({ beers, match, user, cart, handleRenderCart, cartLength, remo
       <td className="cell">
         {user ? <div><button onClick={() => {cart.push(currentBeer); handleRenderCart()}} className="btn btn-success">Add to Cart</button><br /><br /><br /><button disabled={!(cart.includes(currentBeer))} onClick={() => {remove(cart, currentBeer); handleRenderCart()}} className="btn btn-danger">Remove from Cart</button><br /><br /><br /><Link to="/checkout"className="btn btn-success" >Go to Cart</Link></div> : <Link to="/login" className="btn btn-danger">Login First to Go to Cart</Link>}
           </td>
-      
-            {/* {user ? <td className="cell"><button onClick={() => {cart.push(currentBeer); console.log(props.cart); props.handleRenderCart()}} className="btn btn-success">Add to Cart</button></td> : <td className="cell"><Link to="/login" className="btn btn-success">Add to Cart</Link></td>} */}
-            
           
       </tr>
       </tbody>

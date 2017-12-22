@@ -5,15 +5,13 @@
 Burp is a an application meant for the sale of beer. It is meant to be a traditional e-commerce app meaning it has an index of beers where as a user, one can add beers to their cart and then be able to review their cart/make changes, and then finally purchase the beer. 
 
 ## Screenshots
-![Imgur](https://i.imgur.com/6rD4Z1z.png)
-![Imgur](https://i.imgur.com/n7yD2M5.png)
-![Imgur](https://i.imgur.com/t4DsWrl.png)
-![Imgur](https://i.imgur.com/TZJx0mt.png)
-![Imgur](https://i.imgur.com/bNMHjL4.png)
-![Imgur](https://i.imgur.com/4I2PeDv.png)
-![Imgur](https://i.imgur.com/dMBKb34.png)
-![Imgur](https://i.imgur.com/lEMucgA.png)
-![Imgur](https://i.imgur.com/nPJNB9M.png)
+![Imgur](https://i.imgur.com/gEowG8c.jpg)
+![Imgur](https://i.imgur.com/obA65rl.jpg)
+![Imgur](https://i.imgur.com/TqJjoyZ.png)
+![Imgur](https://i.imgur.com/PGRcx2l.jpg)
+![Imgur](https://i.imgur.com/knVqtX2.png)
+![Imgur](https://i.imgur.com/WY9tfPt.png)
+![Imgur](https://i.imgur.com/U7d5MHg.png)
 
 
 ## Technologies Used: 

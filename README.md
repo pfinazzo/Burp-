@@ -18,7 +18,7 @@ Burp is a an application meant for the sale of beer. It is meant to be a traditi
 HTML, CSS, JavaScript, MERN Stack, Bootstrap
 
 
-## Deployed application: https://guarded-coast-85416.herokuapp.com/
+## Deployed application: https://burpbeer.herokuapp.com/
 
 
 ## Trello:

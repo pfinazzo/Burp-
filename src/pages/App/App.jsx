@@ -24,13 +24,6 @@ class App extends Component {
     }
   }
 
-
-//methods
-
-// refreshPage(){ 
-//   window.location.reload(); 
-// }
-
 getOccurrence(array, value) {
   var count = 0;
   array.forEach(elem => (elem === value && count++));

@@ -30,10 +30,10 @@ getOccurrence(array, value) {
   return count;
 }
 
-
 handleLogout = () => {
   userService.logout();
   this.setState({user: null});
+  this.setState({cart: []});
 }
 
 handleSignup = () => {
@@ -104,7 +104,7 @@ render() {
                                                          cartLength={this.state.cart.length}
                                                    handleRenderCart={this.handleRenderCart}
                                                       getOccurrence={this.getOccurrence}
-                                                             remove={this.remove} />}/>
+                                                             remove={this.remove}/>}/>
 
           <Route path="/confirmation" render={() => <Confirmation     cart={this.state.cart} 
                                                                       user={this.state.user}/>}/>
@@ -117,7 +117,8 @@ render() {
                                                                             cartLength={this.state.cart.length}
                                                                       handleRenderCart={this.handleRenderCart} 
                                                                          getOccurrence={this.getOccurrence}
-                                                                                remove={this.remove} /> } />
+                                                                                remove={this.remove} 
+                                                                                checkUser={this.checkUser}/> } />
                                                                        
           </Switch>
     </div>
